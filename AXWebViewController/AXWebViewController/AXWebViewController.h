@@ -114,7 +114,7 @@ AX_WEB_VIEW_CONTROLLER_AVAILABLITY;
 #if AX_WEB_VIEW_CONTROLLER_USING_WEBKIT
 typedef NSURLSessionAuthChallengeDisposition (^WKWebViewDidReceiveAuthenticationChallengeHandler)(WKWebView *webView, NSURLAuthenticationChallenge *challenge, NSURLCredential * _Nullable __autoreleasing * _Nullable credential);
 API_AVAILABLE(ios(8.0))
-@interface AXWebViewController : UIViewController <WKUIDelegate, WKNavigationDelegate>
+@interface AXWebViewController : BaseViewController <WKUIDelegate, WKNavigationDelegate>
 {
     @protected
     WKWebView *_webView;
@@ -122,7 +122,7 @@ API_AVAILABLE(ios(8.0))
 }
 #else
 API_AVAILABLE(ios(7.0))
-@interface AXWebViewController : UIViewController <UIWebViewDelegate>
+@interface AXWebViewController : BaseViewController <UIWebViewDelegate>
 {
 @protected
     UIWebView *_webView;
